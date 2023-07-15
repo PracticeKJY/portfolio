@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Animation from "./Animation";
 import Link from "next/link";
 
@@ -21,19 +20,13 @@ const Body = () => {
           <div className="flex justify-center">
             <Link
               href="/project"
-              className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+              className="inline-flex text-white dark:text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 hover:text-white rounded text-lg"
             >
               프로젝트보러가기
             </Link>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          {/* <Image
-            className="object-cover object-center rounded"
-            alt="hero"
-            src=""
-            fill={true}
-          /> */}
           <Animation />
         </div>
       </div>
