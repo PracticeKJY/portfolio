@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko-KR" suppressHydrationWarning={true}>
-      <body className="light" suppressHydrationWarning={true}>
+      <body className="bg-primary" suppressHydrationWarning={true}>
         <DarkModeProvider>
           <Header />
           {children}
