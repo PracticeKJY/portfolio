@@ -1,14 +1,13 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import SwitchButton from "./SwitchButton";
 
 const DarkModeButton = () => {
-  const { theme, setTheme } = useTheme();
   return (
     <>
       <SwitchButton>
-        {theme === "dark" ? <LightModeSvg /> : <DarkModeSvg />}
+        <LightModeSvg />
+        <DarkModeSvg />
       </SwitchButton>
     </>
   );
