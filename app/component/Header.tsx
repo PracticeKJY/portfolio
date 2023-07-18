@@ -14,19 +14,19 @@ const Header = () => {
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <Link
-              href="/"
+              href="/about-me"
               className="mr-5 hover:text-gray-900"
             >
               홈
             </Link>
             <Link
-              href="/project"
+              href=""
               className="mr-5 hover:text-gray-900"
             >
               프로젝트
             </Link>
             <Link
-              href="/contect"
+              href=""
               className="mr-5 hover:text-gray-900"
             >
               연락하기
