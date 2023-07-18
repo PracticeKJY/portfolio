@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import { FC } from "react";
-import Image from "next/legacy/image";
+import { FC } from "react"
+import Image from "next/legacy/image"
 
 interface ProjectPageProps {
-  WorkPeriod: any;
-  tag: any;
-  Description: any;
-  Github: string | undefined;
-  name: any;
-  imgSrc: any;
+  WorkPeriod: any
+  tag: any
+  Description: any
+  Github: string | undefined
+  name: any
+  imgSrc: any
 }
 
 const ProjectPage: FC<ProjectPageProps> = ({
@@ -20,8 +20,8 @@ const ProjectPage: FC<ProjectPageProps> = ({
   name,
   imgSrc,
 }) => {
-  const startDate = WorkPeriod.start;
-  const endDate = WorkPeriod.end;
+  const startDate = WorkPeriod.start
+  const endDate = WorkPeriod.end
 
   return (
     <div className="project-card">
@@ -39,7 +39,9 @@ const ProjectPage: FC<ProjectPageProps> = ({
       </div>
       <div className="p-4 flex flex-col border-t-[1px] border-gray-300 dark:border-gray-200/50">
         <h1 className="text-title font-bold">{name}</h1>
-        <h3 className="max-w-[300px] mt-4 text-clamp">{Description}</h3>
+        <h3 className="max-w-[300px] mt-4 text-clamp">
+          {Description}
+        </h3>
         <h4 className="max-w-[300px] mt-4 text-h4">{`${startDate} ~ ${endDate}`}</h4>
         <a href={Github}>깃허브 바로가기</a>
       </div>
@@ -56,7 +58,7 @@ const ProjectPage: FC<ProjectPageProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectPage;
+export default ProjectPage

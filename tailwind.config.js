@@ -17,6 +17,17 @@ module.exports = {
       width: {
         calc: "calc(50%)",
       },
+      animation: {
+        intro: "intro 1s ease-out 1s forwards ",
+        mid: "intro 1s ease-out  2s forwards",
+        end: "intro 1s ease-out  4s forwards",
+      },
+      keyframes: {
+        intro: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+      },
     },
   },
   plugins: [],
