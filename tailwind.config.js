@@ -8,7 +8,16 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        clamp: "clamp(0.85rem, 2.5vw, 1.25rem)",
+        title: "clamp(1rem, 2.5vw, 1.5rem)",
+        h4: "clamp(0.85rem, 2.5vw, 1rem)",
+      },
+      width: {
+        calc: "calc(50%)",
+      },
+    },
   },
   plugins: [],
-};
+}

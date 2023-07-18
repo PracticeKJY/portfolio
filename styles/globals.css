@@ -16,12 +16,14 @@
 
 .project-card {
   @apply flex flex-col m-3 rounded-xl w-full
-          transition duration-300 transform border border-gray-300
-          hover:scale-105
-          hover:shadow-lg
+          transition duration-300 transform 
+          border
+           /* border-gray-300 */
+          shadow-lg
+          /* hover:scale-100       */
+          hover:shadow-xl
           dark:border-gray-200/50
-          dark:hover:shadow-gray-400/40
-          hover:text-blue-600;
+          dark:hover:shadow-gray-400/20;
 }
 
 h1,
@@ -43,5 +45,10 @@ a {
 }
 
 p {
-  @apply text-slate-500 dark:text-slate-400;
+  /* @apply text-slate-500 dark:text-slate-400; */
+  @apply text-black dark:text-white;
+}
+
+li {
+  list-style: none;
 }

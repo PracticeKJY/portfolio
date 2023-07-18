@@ -23,9 +23,6 @@ const ProjectPage: FC<ProjectPageProps> = ({
   const startDate = WorkPeriod.start;
   const endDate = WorkPeriod.end;
 
-  console.log("startDate", startDate);
-  console.log("endDate", endDate);
-
   return (
     <div className="project-card">
       <div className="max-w-[400px] max-h-[380px]">
