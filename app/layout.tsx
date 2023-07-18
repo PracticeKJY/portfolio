@@ -1,28 +1,34 @@
-import "../styles/globals.css";
-import type { Metadata } from "next";
-import Footer from "./component/Footer";
-import Header from "./component/Header";
-import DarkModeProvider from "./provider/DarkModeProvider";
+import "../styles/globals.css"
+import type { Metadata } from "next"
+import Footer from "./component/Footer"
+import Header from "./component/Header"
+import DarkModeProvider from "./provider/DarkModeProvider"
+import JotaiProvider from "./provider/JotaiProvider"
 
 export const metadata: Metadata = {
   title: "노션을 사용하여 만든 포트폴리오",
   description: "포트폴리오만들기",
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="ko-KR" suppressHydrationWarning={true}>
-      <body className="bg-primary" suppressHydrationWarning={true}>
-        <DarkModeProvider>
-          <Header />
-          {children}
-          <Footer />
-        </DarkModeProvider>
+      <body
+        className="bg-primary"
+        suppressHydrationWarning={true}
+      >
+        <JotaiProvider>
+          <DarkModeProvider>
+            <Header />
+            {children}
+            <Footer />
+          </DarkModeProvider>
+        </JotaiProvider>
       </body>
     </html>
-  );
+  )
 }
