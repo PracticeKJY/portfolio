@@ -1,7 +1,5 @@
 import "../styles/globals.css"
 import type { Metadata } from "next"
-import Footer from "./component/Footer"
-import Header from "./component/Header"
 import DarkModeProvider from "./provider/DarkModeProvider"
 import JotaiProvider from "./provider/JotaiProvider"
 
@@ -22,11 +20,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <JotaiProvider>
-          <DarkModeProvider>
-            <Header />
-            {children}
-            <Footer />
-          </DarkModeProvider>
+          <DarkModeProvider>{children}</DarkModeProvider>
         </JotaiProvider>
       </body>
     </html>
