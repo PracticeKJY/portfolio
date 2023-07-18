@@ -1,11 +1,4 @@
-import { Metadata } from "next"
 import ProjectPage from "./ProjectPage"
-import { Suspense } from "react"
-
-export const metadata: Metadata = {
-  title: "프로젝트",
-  description: "프로젝트 소개 페이지",
-}
 
 const Content = async () => {
   const options = {
@@ -72,12 +65,4 @@ const Content = async () => {
   )
 }
 
-const Project = () => {
-  return (
-    <Suspense fallback={<div>로딩중...</div>}>
-      <Content />
-    </Suspense>
-  )
-}
-
-export default Project
+export default Content
