@@ -47,7 +47,7 @@ export const FrontEndLists = atom([
         name: "Next.js",
         value: 70,
         description:
-          "Next.js의 page, app 두 모드 다 프로젝트에 적용한 경험이 있습니다.",
+          "Next.js의 page와 app 모드를 프로젝트에 적용 및 마이그레이션한 경험이 있습니다.",
       },
       {
         id: "fro-3",
@@ -61,14 +61,14 @@ export const FrontEndLists = atom([
         name: "Recoil",
         value: 70,
         description:
-          "프로젝트에 Recoil을 적용한 경험이 있습니다.",
+          "프로젝트를 진행하며 props Drilling을 경험하고 Recoil을 적용함으로써 해결한 경험이 있습니다.",
       },
       {
         id: "fro-5",
         name: "Jotai",
         value: 70,
         description:
-          "프로젝트에 Jotai을 적용한 경험이 있습니다.",
+          "프로젝트에 Jotai의 atomWithStorage같은 util들을 적용한 경험이 있습니다.",
       },
       {
         id: "fro-6",
