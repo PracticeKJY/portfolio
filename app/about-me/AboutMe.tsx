@@ -9,6 +9,8 @@ import HomeBackground from "../component/HomeBackground"
 import { useEffect, useRef } from "react"
 import { notionDataAtom } from "@/store/state"
 import { useAtom, useSetAtom } from "jotai"
+import Contact from "../component/contact/Contact"
+import FakeMoveToScrollDiv from "../component/FakeMoveToScrollDiv"
 
 const AboutMe = ({ data }: any) => {
   const setNotionData = useSetAtom(notionDataAtom)
@@ -20,6 +22,7 @@ const AboutMe = ({ data }: any) => {
   const skillRef = useRef(null)
   const projectRef = useRef(null)
   const topRef = useRef(null)
+  const contactRef = useRef(null)
 
   return (
     <>
@@ -27,17 +30,17 @@ const AboutMe = ({ data }: any) => {
         skillRef={skillRef}
         projectRef={projectRef}
         topRef={topRef}
+        contactRef={contactRef}
       />
-      <div className="relative" ref={topRef}>
-        <HomeBackground />
-        <Body skillRef={skillRef} />
-      </div>
-      <div ref={skillRef}>
-        <Skill />
-      </div>
-      <div ref={projectRef}>
-        <Project />
-      </div>
+      <FakeMoveToScrollDiv ref={topRef} />
+      <HomeBackground />
+      <Body skillRef={skillRef} />
+      <FakeMoveToScrollDiv ref={skillRef} />
+      <Skill />
+      <FakeMoveToScrollDiv ref={projectRef} />
+      <Project />
+      <FakeMoveToScrollDiv ref={contactRef} />
+      <Contact />
       <Footer />
     </>
   )

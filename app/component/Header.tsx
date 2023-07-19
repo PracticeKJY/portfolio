@@ -6,12 +6,14 @@ interface HeaderProps {
   skillRef?: any
   projectRef?: any
   topRef?: any
+  contactRef?: any
 }
 
 const Header: FC<HeaderProps> = ({
   skillRef,
   projectRef,
   topRef,
+  contactRef,
 }) => {
   const moveToTop = () => {
     if (topRef) {
@@ -33,6 +35,13 @@ const Header: FC<HeaderProps> = ({
       })
     }
   }
+  const moveToContact = () => {
+    if (contactRef) {
+      contactRef.current.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  }
 
   return (
     <>
@@ -47,21 +56,27 @@ const Header: FC<HeaderProps> = ({
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <button
               onClick={moveToTop}
-              className="mr-5 hover:text-gray-900"
+              className="mr-5 hover:text-gray-300"
             >
               Home
             </button>
             <button
               onClick={moveToSkill}
-              className="mr-5 hover:text-gray-900"
+              className="mr-5 hover:text-gray-300"
             >
               Skills
             </button>
             <button
               onClick={moveToProject}
-              className="mr-5 hover:text-gray-900"
+              className="mr-5 hover:text-gray-300"
             >
               Projects
+            </button>
+            <button
+              onClick={moveToContact}
+              className="mr-5 hover:text-gray-300"
+            >
+              Contact
             </button>
           </nav>
           <DarkModeButton />
