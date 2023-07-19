@@ -8,7 +8,6 @@ interface ProjectPageProps {
   WorkPeriod: any
   tag: any
   Description: any
-  Github: any
   name: any
   imgSrc: any
   deploy: any
@@ -19,7 +18,6 @@ const ProjectPage: FC<ProjectPageProps> = ({
   WorkPeriod,
   tag,
   Description,
-  Github,
   name,
   imgSrc,
   deploy,
