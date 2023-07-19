@@ -53,10 +53,7 @@ const Project = () => {
                         data.properties.Description
                           .rich_text[0].plain_text
                       }
-                      Github={
-                        data.properties.GitHub.rich_text[0]
-                          .plain_text
-                      }
+                      Github={data.properties.GitHub}
                       imgSrc={
                         data.cover.file.url ||
                         data.cover.external.url

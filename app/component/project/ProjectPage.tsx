@@ -53,7 +53,9 @@ const ProjectPage: FC<ProjectPageProps> = ({
           {Description}
         </h3>
         <h4 className="max-w-[300px] mt-4 text-h4">{`${startDate} ~ ${endDate}`}</h4>
-        <Link href={Github}>깃허브 바로가기</Link>
+        <Link href={Github.rich_text[0].plain_text}>
+          깃허브 바로가기
+        </Link>
         <Link
           href={deploy}
           className={`${deploy === "-" && "hidden"}`}
