@@ -1,21 +1,33 @@
-import Body from "../component/Body"
-import Footer from "../component/Footer"
-import Header from "../component/Header"
-import Skill from "../component/skill/Skill"
-import Project from "../component/project/Project"
-import HomeBackground from "../component/HomeBackground"
+import AboutMe from "./AboutMe"
 
-const AboutMe = () => {
-  return (
-    <>
-      <HomeBackground />
-      <Header />
-      <Body />
-      <Skill />
-      <Project />
-      <Footer />
-    </>
+const Content = async () => {
+  const options = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Notion-Version": "2022-06-28",
+      "content-Type": "application/json",
+      authorization: `Bearer ${process.env.NOTION_TOKEN}`,
+    },
+    body: JSON.stringify({
+      sorts: [
+        {
+          property: "WorkPeriod",
+          direction: "descending",
+        },
+      ],
+      page_size: 100,
+    }),
+  }
+
+  const response = await fetch(
+    `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`,
+    options
   )
+
+  const dataJSON = await response.json()
+
+  return <AboutMe data={dataJSON} />
 }
 
-export default AboutMe
+export default Content

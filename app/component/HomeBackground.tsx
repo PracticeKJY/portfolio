@@ -18,6 +18,7 @@ const HomeBackground = () => {
 
   return (
     <Image
+      className="absolute"
       src={
         theme === "light"
           ? "/spinner.svg"

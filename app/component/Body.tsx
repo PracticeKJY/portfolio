@@ -2,12 +2,21 @@
 
 import Animation from "./Animation"
 import Link from "next/link"
+import { AiOutlineArrowDown } from "react-icons/ai"
 
-const Body = () => {
+const Body = ({ skillRef }: any) => {
+  const moveToSkill = () => {
+    if (skillRef) {
+      skillRef.current.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  }
+
   return (
     <>
       <section className="relative flex flex-col items-center justify-center min-h-screen  body-font">
-        <div className="container mx-auto flex px-5 py-24 flex-col items-center">
+        <div className="container mx-auto flex px-5 py-12 flex-col items-center">
           <div className="sticky  justify-center items-center lg:flex-grow   flex flex-col  mb-16 md:mb-0 text-center">
             <h1 className="dark:text-white sm:text-3xl text-2xl mb-4 font-medium text-gray-900 ">
               프론트엔드 개발자
@@ -18,7 +27,7 @@ const Body = () => {
               입니다.
               <br />
             </h1>
-            <div className="pt-10 hidden sm:inline-block text-xl">
+            <div className="pt-10 hidden sm:inline-block text-xl ">
               <div>
                 <span className="inline-block relative after:content-['_'] after:inline-block after:absolute after:w-full after:h-[6px] after:bg-purple-200 after:bottom-0 after:left-0">
                   새로운 지식
@@ -41,6 +50,12 @@ const Body = () => {
                 </span>
                 를 고민합니다.
               </div>
+            </div>
+            <div
+              className=" px-24 pt-24 cursor-pointer animate-bounce"
+              onClick={moveToSkill}
+            >
+              <AiOutlineArrowDown size={40} />
             </div>
             {/* <div className="flex justify-center">
             <Link

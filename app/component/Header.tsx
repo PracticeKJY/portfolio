@@ -1,10 +1,42 @@
 import Link from "next/link"
 import DarkModeButton from "./DarkModeButton"
+import { FC, useEffect, useRef } from "react"
 
-const Header = () => {
+interface HeaderProps {
+  skillRef?: any
+  projectRef?: any
+  topRef?: any
+}
+
+const Header: FC<HeaderProps> = ({
+  skillRef,
+  projectRef,
+  topRef,
+}) => {
+  const moveToTop = () => {
+    if (topRef) {
+      topRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const moveToSkill = () => {
+    if (skillRef) {
+      skillRef.current.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  }
+  const moveToProject = () => {
+    if (projectRef) {
+      projectRef.current.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  }
+
   return (
     <>
-      <header className="sticky text-gray-600 body-font">
+      <header className="fixed z-[100] w-full text-gray-600 body-font bg-primary ">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link
             href="/"
@@ -13,24 +45,24 @@ const Header = () => {
             <span className="ml-3 text-xl">{"JY's."}</span>
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <Link
-              href="/about-me"
+            <button
+              onClick={moveToTop}
               className="mr-5 hover:text-gray-900"
             >
-              홈
-            </Link>
-            <Link
-              href=""
+              Home
+            </button>
+            <button
+              onClick={moveToSkill}
               className="mr-5 hover:text-gray-900"
             >
-              프로젝트
-            </Link>
-            <Link
-              href=""
+              Skills
+            </button>
+            <button
+              onClick={moveToProject}
               className="mr-5 hover:text-gray-900"
             >
-              연락하기
-            </Link>
+              Projects
+            </button>
           </nav>
           <DarkModeButton />
         </div>

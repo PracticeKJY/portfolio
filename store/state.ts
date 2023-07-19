@@ -2,7 +2,14 @@ import { atom } from "jotai"
 import { atomWithStorage } from "jotai/utils"
 
 export const toggleAtom = atomWithStorage("toggle", false)
-
+export const notionDataAtom = atom({
+  has_more: false,
+  next_cursor: null,
+  object: "",
+  page_or_database: {},
+  results: [],
+  type: "",
+})
 export const LanguageLists = atom([
   {
     title: "Language",

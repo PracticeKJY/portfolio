@@ -36,7 +36,12 @@ const Home = () => {
             천천히 점들을 잇습니다.
           </div>
         </div>
-        <Link href={"/about-me"}>{"> 다음으로"}</Link>
+        <Link
+          className="pt-20 text-xl animate-end opacity-0"
+          href={"/about-me"}
+        >
+          {"> 다음으로"}
+        </Link>
       </div>
     </div>
   )
