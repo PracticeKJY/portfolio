@@ -8,7 +8,7 @@ interface ProjectPageProps {
   WorkPeriod: any
   tag: any
   Description: any
-  Github: string
+  Github: any
   name: any
   imgSrc: any
   deploy: any
