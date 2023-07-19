@@ -48,7 +48,7 @@ const Project = () => {
                       }
                       Github={
                         data.properties.GitHub.rich_text[0]
-                          .text.content
+                          .plain_text
                       }
                       imgSrc={
                         data.cover.file.url ||
