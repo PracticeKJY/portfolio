@@ -53,7 +53,17 @@ const ProjectPage: FC<ProjectPageProps> = ({
           {Description}
         </h3>
         <h4 className="max-w-[300px] mt-4 text-h4">{`${startDate} ~ ${endDate}`}</h4>
-        <Link href={Github.rich_text[0].plain_text}>
+        <Link
+          href={
+            name === "Taing"
+              ? "https://github.com/likelion-fe4-js3/taing"
+              : name === "Market Karly"
+              ? "https://github.com/LikeLion-FE-React-Project04/project-repo"
+              : name === "Restay"
+              ? "https://github.com/PracticeKJY/restay-refactor"
+              : ""
+          }
+        >
           깃허브 바로가기
         </Link>
         <Link
