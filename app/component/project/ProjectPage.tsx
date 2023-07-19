@@ -11,7 +11,6 @@ interface ProjectPageProps {
   name: any
   imgSrc: any
   deploy: any
-  til: string
 }
 
 const ProjectPage: FC<ProjectPageProps> = ({
@@ -21,7 +20,6 @@ const ProjectPage: FC<ProjectPageProps> = ({
   name,
   imgSrc,
   deploy,
-  til,
 }) => {
   const startDate = WorkPeriod.start
   const endDate = WorkPeriod.end
@@ -66,7 +64,15 @@ const ProjectPage: FC<ProjectPageProps> = ({
           배포 바로가기
         </Link>
         <Link
-          href={til}
+          href={
+            name === "Restay"
+              ? "https://maddening-orchid-043.notion.site/Restay-8075199f7c644fe39439f5a905d37dcc?pvs=4"
+              : name === "Market Karly"
+              ? "https://maddening-orchid-043.notion.site/Market-Karly-b108e152ef5e4950bd4bb570cef4734b?pvs=4"
+              : name === "Taing"
+              ? "https://maddening-orchid-043.notion.site/Taing-0edacf7f7dc34c978d63b302563a1f43?pvs=4"
+              : ""
+          }
           className={`${name === "Taing" && "hidden"}`}
         >
           TIL

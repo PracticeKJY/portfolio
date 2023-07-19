@@ -25,7 +25,7 @@ const Project = () => {
         </div>
         <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
           <div className="grid grid-cols-1 gap-6 p-12 m-4 md:grid-cols-2">
-            {/* {notionData.results.map(
+            {notionData.results.map(
               (data: any, index: any) => {
                 return (
                   <li key={index}>
@@ -38,7 +38,6 @@ const Project = () => {
                         data.properties.Deploy.rich_text[0]
                           .text.content
                       }
-                      til={data.public_url}
                       tag={
                         data.properties.Skills.multi_select
                       }
@@ -57,7 +56,7 @@ const Project = () => {
                   </li>
                 )
               }
-            )} */}
+            )}
           </div>
         </div>
       </Container>
