@@ -4,9 +4,20 @@ import { useAtomValue } from "jotai"
 import ProjectPage from "./ProjectPage"
 import { notionDataAtom } from "@/store/state"
 import Container from "../Container"
+import { useEffect, useState } from "react"
 
 const Project = () => {
   const notionData = useAtomValue(notionDataAtom)
+
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <>
