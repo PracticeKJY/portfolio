@@ -2,14 +2,17 @@
 
 import { FC } from "react"
 import Image from "next/legacy/image"
+import Link from "next/link"
 
 interface ProjectPageProps {
   WorkPeriod: any
   tag: any
   Description: any
-  Github: string | undefined
+  Github: string
   name: any
   imgSrc: any
+  deploy: any
+  til: string
 }
 
 const ProjectPage: FC<ProjectPageProps> = ({
@@ -19,6 +22,8 @@ const ProjectPage: FC<ProjectPageProps> = ({
   Github,
   name,
   imgSrc,
+  deploy,
+  til,
 }) => {
   const startDate = WorkPeriod.start
   const endDate = WorkPeriod.end
@@ -43,7 +48,19 @@ const ProjectPage: FC<ProjectPageProps> = ({
           {Description}
         </h3>
         <h4 className="max-w-[300px] mt-4 text-h4">{`${startDate} ~ ${endDate}`}</h4>
-        <a href={Github}>깃허브 바로가기</a>
+        <Link href={Github}>깃허브 바로가기</Link>
+        <Link
+          href={deploy}
+          className={`${deploy === "-" && "hidden"}`}
+        >
+          배포 바로가기
+        </Link>
+        <Link
+          href={til}
+          className={`${til === "-" && "hidden"}`}
+        >
+          TIL
+        </Link>
       </div>
       <div className="hidden sm:block relative w-[300px] p-4">
         <div className="flex flex-wrap justify-items-start gap-2">

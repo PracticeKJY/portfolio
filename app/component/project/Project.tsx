@@ -27,6 +27,14 @@ const Project = () => {
                         data.properties.이름.title[0]
                           .plain_text
                       }
+                      deploy={
+                        data.properties.Deploy.rich_text[0]
+                          .text.content
+                      }
+                      til={
+                        data.properties.TIL.rich_text[0]
+                          .text.content
+                      }
                       tag={
                         data.properties.Skills.multi_select
                       }
@@ -38,9 +46,8 @@ const Project = () => {
                           .rich_text[0].plain_text
                       }
                       Github={
-                        data.properties.Github
-                          ? data.properties.Github.url
-                          : ""
+                        data.properties.GitHub.rich_text[0]
+                          .text.content
                       }
                       imgSrc={
                         data.cover.file.url ||
