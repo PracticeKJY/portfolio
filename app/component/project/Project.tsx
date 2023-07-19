@@ -32,7 +32,7 @@ const Project = () => {
                           .text.content
                       }
                       til={
-                        data.properties.TIL.rich_text[0]
+                        data.properties.til.rich_text[0]
                           .text.content
                       }
                       tag={

@@ -28,6 +28,8 @@ const ProjectPage: FC<ProjectPageProps> = ({
   const startDate = WorkPeriod.start
   const endDate = WorkPeriod.end
 
+  console.log("🚀 ~ file: ProjectPage.tsx:32 ~ til:", til)
+
   return (
     <div className="project-card">
       <div className="max-w-[400px] max-h-[380px]">
