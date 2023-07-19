@@ -8,6 +8,10 @@ import Container from "../Container"
 const Project = () => {
   const notionData = useAtomValue(notionDataAtom)
 
+  const test = notionData.results.map((data: any) => {
+    return console.log(data.public_url)
+  })
+
   return (
     <>
       <Container>
@@ -31,10 +35,7 @@ const Project = () => {
                         data.properties.Deploy.rich_text[0]
                           .text.content
                       }
-                      til={
-                        data.properties.til.rich_text[0]
-                          .text.content
-                      }
+                      til={data.public_url}
                       tag={
                         data.properties.Skills.multi_select
                       }

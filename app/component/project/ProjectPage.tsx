@@ -59,7 +59,7 @@ const ProjectPage: FC<ProjectPageProps> = ({
         </Link>
         <Link
           href={til}
-          className={`${til === "-" && "hidden"}`}
+          className={`${name === "Taing" && "hidden"}`}
         >
           TIL
         </Link>
