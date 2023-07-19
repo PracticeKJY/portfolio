@@ -9,6 +9,12 @@ import { useEffect, useState } from "react"
 const Project = () => {
   const notionData = useAtomValue(notionDataAtom)
 
+  console.log(
+    notionData.results.map((data: any) => {
+      return data
+    })
+  )
+
   return (
     <>
       <Container>
