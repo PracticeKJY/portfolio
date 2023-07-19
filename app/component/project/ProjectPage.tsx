@@ -28,7 +28,10 @@ const ProjectPage: FC<ProjectPageProps> = ({
   const startDate = WorkPeriod.start
   const endDate = WorkPeriod.end
 
-  console.log("🚀 ~ file: ProjectPage.tsx:32 ~ til:", til)
+  console.log(
+    "🚀 ~ file: ProjectPage.tsx:32 ~ github:",
+    Github
+  )
 
   return (
     <div className="project-card">

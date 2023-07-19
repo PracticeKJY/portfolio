@@ -8,10 +8,6 @@ import Container from "../Container"
 const Project = () => {
   const notionData = useAtomValue(notionDataAtom)
 
-  const test = notionData.results.map((data: any) => {
-    return console.log(data.public_url)
-  })
-
   return (
     <>
       <Container>
