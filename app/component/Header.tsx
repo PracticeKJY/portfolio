@@ -1,6 +1,7 @@
 import Link from "next/link"
 import DarkModeButton from "./DarkModeButton"
 import { FC, useEffect, useRef } from "react"
+import DarkMode from "./DarkMode"
 
 interface HeaderProps {
   skillRef?: any
@@ -78,8 +79,9 @@ const Header: FC<HeaderProps> = ({
             >
               Contact
             </button>
+            <DarkModeButton />
+            {/* <DarkMode /> */}
           </nav>
-          <DarkModeButton />
         </div>
       </header>
     </>

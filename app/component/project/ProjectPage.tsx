@@ -60,11 +60,15 @@ const ProjectPage: FC<ProjectPageProps> = ({
               ? "https://github.com/PracticeKJY/restay-refactor"
               : ""
           }
+          rel="noopener noreferrer"
+          target="_blank"
         >
           깃허브 바로가기
         </Link>
         <Link
           href={deploy}
+          rel="noopener noreferrer"
+          target="_blank"
           className={`${deploy === "-" && "hidden"}`}
         >
           배포 바로가기
@@ -79,6 +83,8 @@ const ProjectPage: FC<ProjectPageProps> = ({
               ? "https://maddening-orchid-043.notion.site/Taing-0edacf7f7dc34c978d63b302563a1f43?pvs=4"
               : ""
           }
+          rel="noopener noreferrer"
+          target="_blank"
           className={`${name === "Taing" && "hidden"}`}
         >
           TIL

@@ -15,10 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko-KR" suppressHydrationWarning={true}>
-      <body
-        className="bg-primary"
-        suppressHydrationWarning={true}
-      >
+      <body className="bg-primary">
         <JotaiProvider>
           <DarkModeProvider>{children}</DarkModeProvider>
         </JotaiProvider>

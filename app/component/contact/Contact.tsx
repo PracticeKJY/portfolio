@@ -15,7 +15,11 @@ const Contact = () => {
         </div>
         <div className="pt-10">
           <ContactItemWrapper name={"E-mail"}>
-            <Link href="">
+            <Link
+              href="mailto:qw1192@gmail.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <span className="text-lg">
                 qw1192@gmail.com
               </span>
