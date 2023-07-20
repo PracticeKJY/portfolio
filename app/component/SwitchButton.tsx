@@ -65,14 +65,23 @@ const ThemeSwitch: FC<SwitchProps> = ({
   children,
   onClick,
 }) => {
+  const [toggle, setToggle] = useAtom(toggleAtom)
+
   return (
     <div
-      className="w-14 h-7 bg-slate-300 peer-focus:outline-none peer-focus:ring-4
+      className={`w-14 h-7  peer-focus:outline-none peer-focus:ring-4
     peer-focus:ring-blue-300 dark:peer-focus:ring-blue-300 rounded-full peer
-    peer-checked:after:translate-x-full peer-checked:after:border-yellow-400 after:content-['']
-    after:absolute after:z-10 after:top-0.25 after:left-[0px] after:bg-white after:border-gray-300
-    after:border after:rounded-full after:h-7 after:w-7 after:transition-all dark:border-gray-600
-    peer-checked:bg-yellow-200"
+   ${
+     toggle
+       ? "after:translate-x-full"
+       : "after:translate-x-0 "
+   }
+   ${toggle ? "bg-yellow-200" : "bg-slate-300"}
+    peer-checked:after:border-yellow-400 after:content-['']
+    after:absolute after:z-10 after:top-0.25  after:bg-white after:border-gray-300
+    after:border after:rounded-full after:h-7 after:w-7 
+    after:left-[0px] after:transition-all dark:border-gray-600
+    `}
       onClick={onClick}
     >
       {children}

@@ -1,13 +1,15 @@
 "use client"
 
+import { toggleAtom } from "@/store/state"
 import SwitchButton from "./SwitchButton"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import { useAtom } from "jotai"
 
 const DarkModeButton = () => {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-
+  const [toggle, setToggle] = useAtom(toggleAtom)
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -16,8 +18,19 @@ const DarkModeButton = () => {
     return null
   }
 
-  const onClick = () =>
-    setTheme(theme === "dark" ? "light" : "dark")
+  const themeHandler = () => {
+    return theme === "dark"
+      ? setTheme("light")
+      : setTheme("dark")
+  }
+  const toggleHandler = () => {
+    setToggle(!toggle)
+  }
+
+  const onClick = () => {
+    themeHandler()
+    toggleHandler()
+  }
 
   return (
     <>
