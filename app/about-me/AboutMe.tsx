@@ -5,7 +5,7 @@ import Footer from "../component/Footer"
 import Header from "../component/Header"
 import Skill from "../component/skill/Skill"
 import Project from "../component/project/Project"
-import HomeBackground from "../component/HomeBackground"
+// import HomeBackground from "../component/HomeBackground"
 import { useEffect, useRef } from "react"
 import { notionDataAtom } from "@/store/state"
 import { useAtom, useSetAtom } from "jotai"
@@ -33,7 +33,7 @@ const AboutMe = ({ data }: any) => {
         contactRef={contactRef}
       />
       <FakeMoveToScrollDiv ref={topRef} />
-      <HomeBackground />
+      {/* <HomeBackground /> */}
       <Body skillRef={skillRef} />
       <FakeMoveToScrollDiv ref={skillRef} />
       <Skill />
