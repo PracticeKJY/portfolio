@@ -9,7 +9,6 @@ interface ProjectPageProps {
   tag: any
   Description: any
   name: any
-  imgSrc: any
   deploy: any
 }
 
@@ -18,7 +17,6 @@ const ProjectPage: FC<ProjectPageProps> = ({
   tag,
   Description,
   name,
-  imgSrc,
   deploy,
 }) => {
   const startDate = WorkPeriod.start
@@ -29,7 +27,15 @@ const ProjectPage: FC<ProjectPageProps> = ({
       <div className="max-w-[400px] max-h-[380px]">
         <Image
           className="border-none rounded-lg "
-          src={imgSrc}
+          src={
+            name === "Taing"
+              ? "/taing-thumb.png"
+              : name === "Market Karly"
+              ? "/karly-thumb.png"
+              : name === "Restay"
+              ? "/restay-thumb.png"
+              : ""
+          }
           alt="cover image"
           width={100}
           height={100}

@@ -9,12 +9,6 @@ import { useEffect, useState } from "react"
 const Project = () => {
   const notionData = useAtomValue(notionDataAtom)
 
-  console.log(
-    notionData.results.map((data: any) => {
-      return data
-    })
-  )
-
   return (
     <>
       <Container>
@@ -47,10 +41,6 @@ const Project = () => {
                       Description={
                         data.properties.Description
                           .rich_text[0].plain_text
-                      }
-                      imgSrc={
-                        data.cover.file.url ||
-                        data.cover.external.url
                       }
                     />
                   </li>
