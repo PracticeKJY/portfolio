@@ -31,7 +31,11 @@ const Contact = () => {
             </Link>
           </ContactItemWrapper>
           <ContactItemWrapper name={"Github"}>
-            <Link href={"https://github.com/PracticeKJY"}>
+            <Link
+              href={"https://github.com/PracticeKJY"}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <span className="text-lg">
                 https://github.com/PracticeKJY
               </span>
