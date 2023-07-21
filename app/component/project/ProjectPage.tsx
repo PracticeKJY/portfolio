@@ -87,7 +87,7 @@ const ProjectPage: FC<ProjectPageProps> = ({
           target="_blank"
           className={`${name === "Taing" && "hidden"}`}
         >
-          TIL
+          인사이트 바로가기
         </Link>
       </div>
       <div className="hidden sm:block relative w-[300px] p-4">
