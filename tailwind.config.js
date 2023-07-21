@@ -21,6 +21,7 @@ module.exports = {
         calc: "calc(50%)",
       },
       animation: {
+        intersection: "intro 0.5s ease-out 0.5s forwards",
         intro: "intro 1s ease-out 1s forwards ",
         mid: "intro 1s ease-out  2s forwards",
         end: "intro 1s ease-out  4s forwards",

@@ -11,45 +11,38 @@ const Project = () => {
 
   return (
     <>
-      <Container>
-        <div className="w-full flex items-start pb-[6px] border-b-[1px] border-slate-800 dark:border-white">
-          <div className="text-3xl font-semibold">
-            Projects
-          </div>
+      <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10 animate-intersection opacity-0">
+        <div className="grid grid-cols-1 gap-6 p-12 m-4 md:grid-cols-2">
+          {notionData.results.map(
+            (data: any, index: any) => {
+              return (
+                <li key={index}>
+                  <ProjectPage
+                    name={
+                      data.properties.이름.title[0]
+                        .plain_text
+                    }
+                    deploy={
+                      data.properties.Deploy.rich_text[0]
+                        .text.content
+                    }
+                    tag={
+                      data.properties.Skills.multi_select
+                    }
+                    WorkPeriod={
+                      data.properties.WorkPeriod.date
+                    }
+                    Description={
+                      data.properties.Description
+                        .rich_text[0].plain_text
+                    }
+                  />
+                </li>
+              )
+            }
+          )}
         </div>
-        <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
-          <div className="grid grid-cols-1 gap-6 p-12 m-4 md:grid-cols-2">
-            {notionData.results.map(
-              (data: any, index: any) => {
-                return (
-                  <li key={index}>
-                    <ProjectPage
-                      name={
-                        data.properties.이름.title[0]
-                          .plain_text
-                      }
-                      deploy={
-                        data.properties.Deploy.rich_text[0]
-                          .text.content
-                      }
-                      tag={
-                        data.properties.Skills.multi_select
-                      }
-                      WorkPeriod={
-                        data.properties.WorkPeriod.date
-                      }
-                      Description={
-                        data.properties.Description
-                          .rich_text[0].plain_text
-                      }
-                    />
-                  </li>
-                )
-              }
-            )}
-          </div>
-        </div>
-      </Container>
+      </div>
     </>
   )
 }
