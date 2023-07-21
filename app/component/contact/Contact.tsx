@@ -61,7 +61,7 @@ const ContactItemWrapper: FC<ContactItemWrapper> = ({
   return (
     <div className="py-3 flex flex-col gap-4">
       <div className="text-2xl ">
-        <div className="underline-neon">{name}</div>
+        <div className="underline-contact">{name}</div>
       </div>
       {children}
     </div>
