@@ -9,6 +9,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        Pretendard: ["Pretendard-Regular"],
+      },
       fontSize: {
         clamp: "clamp(0.85rem, 2.5vw, 1.25rem)",
         title: "clamp(1rem, 2.5vw, 1.5rem)",

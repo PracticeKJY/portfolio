@@ -14,7 +14,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko-KR" suppressHydrationWarning={true}>
+    <html
+      className="font-Pretendard"
+      lang="ko-KR"
+      suppressHydrationWarning={true}
+    >
       <body className="bg-primary">
         <JotaiProvider>
           <DarkModeProvider>{children}</DarkModeProvider>
