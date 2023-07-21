@@ -29,7 +29,6 @@ const SkillCard: FC<SkillCardProps> = ({ list }) => {
               classes="skill"
               onToggle={onToggle}
             />
-            <div className="xl:mr-6">Detail</div>
           </div>
         </div>
         {list[0].items.map((data: any) => {

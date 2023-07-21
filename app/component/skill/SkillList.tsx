@@ -19,7 +19,7 @@ const SkillList: FC<SkillListProps> = ({
 }) => {
   return (
     <div className="flex flex-row items-start">
-      <div className="flex items-center gap-2 w-[300px] ">
+      <div className="flex items-center gap-2 w-full sm:w-[300px]  ">
         <IoMdCheckbox size={16} />
         <p>{name}</p>
       </div>
@@ -38,7 +38,6 @@ const SkillList: FC<SkillListProps> = ({
           <p className="text-md mt-1 mr-1">{description}</p>
         )}
       </div>
-      <p>{`${value}%`}</p>
     </div>
   )
 }
