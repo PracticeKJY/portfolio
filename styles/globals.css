@@ -15,7 +15,7 @@
 }
 
 .underline-neon {
-  @apply inline-block relative after:content-['_'] after:inline-block after:absolute after:w-full after:h-[6px] after:bg-purple-200 after:bottom-0 after:left-0;
+  @apply inline-block relative after:content-['_'] after:inline-block after:absolute after:w-full after:h-[6px] after:bg-yellow-400 after:bottom-[-2px] sm:after:bottom-[-20px]   after:left-0;
 }
 
 .btn-project {
