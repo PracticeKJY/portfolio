@@ -3,6 +3,7 @@
 import Animation from "./Animation"
 import Link from "next/link"
 import { AiOutlineArrowDown } from "react-icons/ai"
+import { SlArrowDown } from "react-icons/sl"
 import HomeBackground from "./HomeBackground"
 
 const Body = ({ skillRef }: any) => {
@@ -16,7 +17,7 @@ const Body = ({ skillRef }: any) => {
 
   return (
     <>
-      <section className="relative flex flex-col items-center justify-center min-h-screen  body-font">
+      <section className="relative flex flex-col items-center justify-center min-h-screen body-font">
         <HomeBackground />
         <div className="container mx-auto flex px-5 py-12 flex-col items-center">
           <div className="sticky  justify-center items-center lg:flex-grow   flex flex-col  mb-16 md:mb-0 text-center">
@@ -46,7 +47,7 @@ const Body = ({ skillRef }: any) => {
               className=" px-24 pt-24 cursor-pointer animate-bounce"
               onClick={moveToSkill}
             >
-              <AiOutlineArrowDown size={40} />
+              <SlArrowDown size={40} />
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
