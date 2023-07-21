@@ -35,7 +35,7 @@ const SkillList: FC<SkillListProps> = ({
             />
           </div>
         ) : (
-          <p className="text-sm mt-1 mr-1">{description}</p>
+          <p className="text-md mt-1 mr-1">{description}</p>
         )}
       </div>
       <p>{`${value}%`}</p>

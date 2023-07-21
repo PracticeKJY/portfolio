@@ -25,7 +25,7 @@ const Body = ({ skillRef }: any) => {
               프론트엔드 개발자
               <br />
               <div className="relative inline-block">
-                <span className="underline-neon sm:text-[60px] text-3xl font-semibold">
+                <span className="sm:text-[60px] text-3xl font-semibold">
                   김종엽
                 </span>{" "}
                 입니다. <br />
@@ -33,14 +33,26 @@ const Body = ({ skillRef }: any) => {
             </h1>
             <div className="pt-10 font-xl sm:text-[28px] sm:leading-[50px] ">
               <div className="">
-                <span>새로운 지식</span>을 학습하고{" "}
-                <span>만드는 것</span>을 좋아합니다.
+                <span className="underline-neon">
+                  새로운 지식
+                </span>
+                을 학습하고{" "}
+                <span className="underline-neon">
+                  만드는 것
+                </span>
+                을 좋아합니다.
               </div>
               <div>
-                <span>개인보다 팀</span>을 우선시 합니다.
+                <span className="underline-neon">
+                  개인보다 팀
+                </span>
+                을 우선시 합니다.
               </div>
               <div>
-                <span>How보다 Why</span>를 고민합니다.
+                <span className="underline-neon">
+                  How보다 Why
+                </span>
+                를 고민합니다.
               </div>
             </div>
             <div
