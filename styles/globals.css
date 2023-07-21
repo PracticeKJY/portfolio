@@ -35,7 +35,7 @@
 }
 
 .underline-contact {
-  @apply inline-block relative after:content-['_'] after:inline-block after:absolute after:w-full  sm:after:h-[8px] after:h-[8px] after:opacity-50 after:bg-purple-200 after:bottom-[-2px] after:left-0;
+  @apply inline-block relative after:content-['_'] after:inline-block after:absolute after:w-full  sm:after:h-[8px] after:h-[8px] after:opacity-50 after:bg-purple-200 dark:after:bg-purple-500 after:bottom-[-2px] after:left-0;
 }
 
 h1,
