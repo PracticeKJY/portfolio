@@ -22,7 +22,7 @@ const Home = () => {
           fade={true}
         />
       </Canvas>
-      <div className="text-md text-white font-thin absolute z-100 top-[50%] sm:right-[20%] sm:pl-0 pl-10">
+      <div className="text-md xl:text-[20px] xl:leading-[40px] 2xl:text-[28px] 2xl:leading-[50px] text-white  absolute z-100 top-[40%] sm:right-[20%] sm:pl-0 pl-10">
         <div>
           <div className="animate-intro opacity-0">
             하나의 점이 이어져 선이 되듯이,
