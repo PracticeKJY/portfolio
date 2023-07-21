@@ -19,7 +19,7 @@ const Body = ({ skillRef }: any) => {
     <>
       <section className="relative flex flex-col items-center justify-center min-h-screen body-font">
         <HomeBackground />
-        <div className="container mx-auto flex px-5 py-12 flex-col items-center">
+        <div className="container mx-auto flex px-5 pt-36 md:pt-18 flex-col items-center">
           <div className="sticky  justify-center items-center lg:flex-grow   flex flex-col  mb-16 md:mb-0 text-center">
             <h1 className="dark:text-white sm:text-[52px] sm:leading-[70px] text-2xl/10 mb-4 font-medium text-gray-900 ">
               프론트엔드 개발자
