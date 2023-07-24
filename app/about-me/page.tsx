@@ -13,7 +13,7 @@ const Content = async () => {
       sorts: [
         {
           property: "WorkPeriod",
-          direction: "descending",
+          direction: "ascending",
         },
       ],
       page_size: 100,

@@ -9,6 +9,14 @@ import { useEffect, useState } from "react"
 const Project = () => {
   const notionData = useAtomValue(notionDataAtom)
 
+  console.log(
+    notionData.results.map((data: any) => {
+      return console.log(
+        data.properties.이름.title[0].plain_text
+      )
+    })
+  )
+
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10 animate-intersection opacity-0">
