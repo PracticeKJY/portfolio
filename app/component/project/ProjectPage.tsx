@@ -34,8 +34,10 @@ const ProjectPage: FC<ProjectPageProps> = ({
               ? "/karly-thumb.png"
               : name === "Restay"
               ? "/restay-thumb.png"
-              : name === "portfolio"
+              : name === "Portfolio"
               ? "/portfolio-thumb.png"
+              : name === "My Frontend Story"
+              ? "/intersection-thumb.png"
               : ""
           }
           alt="cover image"
@@ -60,8 +62,10 @@ const ProjectPage: FC<ProjectPageProps> = ({
               ? "https://github.com/LikeLion-FE-React-Project04/project-repo"
               : name === "Restay"
               ? "https://github.com/PracticeKJY/restay-refactor"
-              : name === "portfolio"
+              : name === "Portfolio"
               ? "https://github.com/PracticeKJY/portfolio"
+              : name === "My Frontend Story"
+              ? "https://github.com/PracticeKJY/my-frontend-story"
               : ""
           }
           rel="noopener noreferrer"
@@ -85,13 +89,17 @@ const ProjectPage: FC<ProjectPageProps> = ({
               ? "https://maddening-orchid-043.notion.site/Market-Karly-b108e152ef5e4950bd4bb570cef4734b?pvs=4"
               : name === "Taing"
               ? "https://maddening-orchid-043.notion.site/Taing-0edacf7f7dc34c978d63b302563a1f43?pvs=4"
-              : name === "portfolio"
+              : name === "Portfolio"
               ? "https://maddening-orchid-043.notion.site/portfolio-ee28d1d87eb84a13b6586f1cdad509f1?pvs=4"
+              : name === "My Frontend Story"
+              ? "https://maddening-orchid-043.notion.site/My-Frontend-Story-3f93750e22234e3bac6f406000b1f3e6?pvs=4"
               : ""
           }
           rel="noopener noreferrer"
           target="_blank"
-          className={`${name === "Taing" && "hidden"}`}
+          className={`${name === "Taing" && "hidden"} ${
+            name === "My Frontend Story" && "hidden"
+          }`}
         >
           인사이트 바로가기
         </Link>
