@@ -37,7 +37,7 @@ const ProjectPage: FC<ProjectPageProps> = ({
               : name === "Portfolio"
               ? "/portfolio-thumb.png"
               : name === "My Frontend Story"
-              ? "/intersection-thumb.png"
+              ? "/intersection-observer-thumb.png"
               : ""
           }
           alt="cover image"
