@@ -3,6 +3,7 @@
 import { FC } from "react"
 import Image from "next/legacy/image"
 import Link from "next/link"
+import ProjectImage from "./ProjectImage"
 
 interface ProjectPageProps {
   WorkPeriod: any
@@ -26,34 +27,14 @@ const ProjectPage: FC<ProjectPageProps> = ({
 
   return (
     <div className="projectWrapper">
-      <div className="project-card-front">{`${
-        index + 1
-      }. ${name}`}</div>
-      <div className="project-card-back">
-        <div className="max-w-[400px] max-h-[380px]">
-          <Image
-            className="border-none rounded-lg "
-            src={
-              name === "Taing"
-                ? "/taing-thumb.png"
-                : name === "Market Karly"
-                ? "/karly-thumb.png"
-                : name === "Restay"
-                ? "/restay-thumb.png"
-                : name === "Portfolio"
-                ? "/portfolio-thumb.png"
-                : name === "My Frontend Story"
-                ? "/intersection-observer-thumb.png"
-                : ""
-            }
-            alt="cover image"
-            width={100}
-            height={100}
-            layout="responsive"
-            objectFit="cover"
-            priority
-          />
+      <div className="project-card-front">
+        <ProjectImage name={name} />
+        <div className="pt-4 pl-8  border-t-[1px] border-gray-300 dark:border-gray-200/50">
+          {name}
         </div>
+      </div>
+      <div className="project-card-back">
+        <ProjectImage name={name} disabled />
         <div className="p-4 flex flex-col border-t-[1px] border-gray-300 dark:border-gray-200/50">
           <h1 className="text-title font-bold">{name}</h1>
           <h3 className="max-w-[300px] mt-4 text-clamp">

@@ -17,7 +17,7 @@ const Project = () => {
             (data: any, index: any) => {
               return (
                 <li key={index}>
-                  <div className="relative w-[338px] h-[565px] sm:w-[356px] sm:h-[800px] perspective-6">
+                  <div className="relative w-[338px] h-[652px] sm:w-[356px] sm:h-[442px] perspective-6">
                     <ProjectPage
                       index={index}
                       name={
