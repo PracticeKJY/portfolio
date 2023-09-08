@@ -9,6 +9,12 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      rotate3d: {
+        180: "180deg",
+        0: "0deg",
+        half: "-180deg",
+      },
+
       fontFamily: {
         Pretendard: ["Pretendard-Regular"],
       },
@@ -34,5 +40,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@kamona/tailwindcss-perspective")],
 }

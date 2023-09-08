@@ -15,8 +15,6 @@ const SkillCard: FC<SkillCardProps> = ({ list }) => {
     setToggle(!toggle)
   }, [toggle])
 
-  // console.log("toggle", toggle)
-
   return (
     <div className="project-card">
       <div className="p-4 pb-6 flex flex-col gap-4">

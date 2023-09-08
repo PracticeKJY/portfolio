@@ -34,6 +34,33 @@
           dark:hover:shadow-gray-400/20;
 }
 
+.projectWrapper {
+  @apply w-full h-full
+  border
+  shadow-lg
+  hover:shadow-xl
+  dark:border-gray-200/50
+  dark:hover:shadow-gray-400/20
+  sm:delay-100
+  sm:transition-transform sm:duration-1000 sm:transform-style-3d sm:hover:rotate-y-180;
+}
+
+.project-card-front {
+  @apply justify-center items-center
+  text-3xl
+  hidden w-full h-full sm:flex 
+  absolute   bg-white
+  dark:text-white
+  dark:bg-black 
+  backface-hidden
+   rotate-y-0;
+}
+
+.project-card-back {
+  @apply absolute w-full h-full backface-hidden
+  sm:rotate-y-180;
+}
+
 .underline-contact {
   @apply inline-block relative after:content-['_'] 
   after:inline-block after:absolute after:w-full  
