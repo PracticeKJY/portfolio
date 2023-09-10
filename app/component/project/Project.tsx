@@ -12,12 +12,12 @@ const Project = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10 animate-intersection opacity-0">
-        <div className="grid grid-cols-1 gap-6 p-12 m-4 md:grid-cols-2 ">
+        <div className="grid grid-cols-1 gap-6  m-4 sm:p-12 md:grid-cols-2 ">
           {notionData.results.map(
             (data: any, index: any) => {
               return (
                 <li key={index}>
-                  <div className="relative w-[338px] h-[652px] sm:w-[356px] sm:h-[442px] perspective-6">
+                  <div className="relative w-[300px] h-[600px] sm:w-[356px] sm:h-[442px] perspective-6">
                     <ProjectPage
                       index={index}
                       name={
