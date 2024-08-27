@@ -17,6 +17,7 @@ import { useAtom, useSetAtom } from "jotai"
 import Contact from "../component/contact/Contact"
 import FakeMoveToScrollDiv from "../component/FakeMoveToScrollDiv"
 import Container from "../component/Container"
+import Career from "../component/career/Career"
 
 const fakeFetch = (delay = 1000) =>
   new Promise((res) => setTimeout(res, delay))
@@ -33,6 +34,7 @@ const AboutMe = ({ data }: any) => {
   const skillRef = useRef(null)
   const projectRef = useRef(null)
   const topRef = useRef(null)
+  const careerRef = useRef(null)
   const contactRef = useRef(null)
 
   const [skillLoading, setSkillLoading] = useState(false)
@@ -68,37 +70,13 @@ const AboutMe = ({ data }: any) => {
     return () => observer.disconnect()
   }, [])
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (testRef.current) {
-  //           if (entry.intersectionRatio > 0.2) {
-  //             setLoading(true)
-  //           }
-  //         }
-  //       })
-  //     },
-
-  //     { root: null, threshold: 0.2 }
-  //   )
-  //   if (testRef.current) {
-  //     observer.observe(testRef.current as Element)
-  //   }
-
-  //   return () => {
-  //     if (testRef.current) {
-  //       observer.unobserve(testRef.current as Element)
-  //     }
-  //   }
-  // }, [])
-
   return (
     <>
       <Header
         skillRef={skillRef}
         projectRef={projectRef}
         topRef={topRef}
+        careerRef={careerRef}
         contactRef={contactRef}
       />
       <FakeMoveToScrollDiv ref={topRef} />
@@ -129,6 +107,8 @@ const AboutMe = ({ data }: any) => {
         </div>
         {projectLoading && <Project />}
       </Container>
+      <FakeMoveToScrollDiv ref={careerRef} />
+      <Career />
       <FakeMoveToScrollDiv ref={contactRef} />
       <Contact />
       <Footer />

@@ -1,9 +1,5 @@
 "use client"
 
-import Container from "../Container"
-import Image from "next/image"
-import SkillList from "./SkillList"
-import SwitchButton from "../SwitchButton"
 import { useAtomValue } from "jotai"
 import {
   BackEndLists,

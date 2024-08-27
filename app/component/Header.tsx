@@ -6,6 +6,7 @@ interface HeaderProps {
   skillRef?: any
   projectRef?: any
   topRef?: any
+  careerRef?: any
   contactRef?: any
 }
 
@@ -13,6 +14,7 @@ const Header: FC<HeaderProps> = ({
   skillRef,
   projectRef,
   topRef,
+  careerRef,
   contactRef,
 }) => {
   const moveToTop = () => {
@@ -31,6 +33,13 @@ const Header: FC<HeaderProps> = ({
   const moveToProject = () => {
     if (projectRef) {
       projectRef.current.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  }
+  const moveToCareer = () => {
+    if (contactRef) {
+      contactRef.current.scrollIntoView({
         behavior: "smooth",
       })
     }
@@ -71,6 +80,12 @@ const Header: FC<HeaderProps> = ({
               className="mr-5 hover:text-gray-300"
             >
               Projects
+            </button>
+            <button
+              onClick={moveToCareer}
+              className="mr-5 hover:text-gray-300"
+            >
+              Career
             </button>
             <button
               onClick={moveToContact}

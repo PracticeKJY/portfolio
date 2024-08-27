@@ -47,7 +47,7 @@ export const FrontEndLists = atom([
         name: "Next.js",
         value: 70,
         description:
-          "Next.js의 page와 app 모드를 프로젝트에 적용 및 마이그레이션한 경험이 있습니다.",
+          "Next.js의 page와 app 모드를 프로젝트에 적용 및 마이그레이션한 경험이 있습니다. 또한 언어셋(next-intl) 및 REST API를 적용한 경험이 있습니다.",
       },
       {
         id: "fro-3",
@@ -84,6 +84,13 @@ export const FrontEndLists = atom([
         description:
           "Tailwind를 사용하여 효율적으로 반응형 UI를 제작한 경험이 있습니다.",
       },
+      {
+        id: "fro-8",
+        name: "Styled-components",
+        value: 80,
+        description:
+          "Styled-components를 사용하여 효율적으로 반응형 UI를 제작한 경험이 있습니다.",
+      },
     ],
   },
 ])
@@ -93,24 +100,24 @@ export const BackEndLists = atom([
     items: [
       {
         id: "bac-1",
-        name: "Node",
-        value: 70,
+        name: "Node.js / express",
+        value: 60,
         description:
-          "npm을 통한 다양한 모듈 패키지 사용에 능숙하고, 비동기 프로그래밍을 숙지하고 있습니다.",
+          "express의 구조를 이해하고 백앤드(controller)를 구현한 경험을 가지고 있습니다.",
       },
       {
         id: "bac-2",
         name: "MongoDB",
-        value: 60,
+        value: 70,
         description:
-          "noSQL의 특징에 대해 이해하고 DB구축 및 프로젝트에 적용한 경험을 가지고 있습니다.",
+          "noSQL의 특징에 대해 이해하고 모델링 및 프로젝트에 적용한 경험을 가지고 있습니다.",
       },
       {
         id: "bac-3",
         name: "Firebase",
         value: 60,
         description:
-          "noSQL의 특징에 대해 이해하고 DB구축 및 프로젝트에 적용한 경험을 가지고 있습니다.",
+          "noSQL의 특징에 대해 이해하고 모델링 및 프로젝트에 적용한 경험을 가지고 있습니다.",
       },
     ],
   },
@@ -131,7 +138,7 @@ export const EtcLists = atom([
         name: "Webpack",
         value: 50,
         description:
-          "webpack 환경의 CI & CD 파이프라인 구축을 통하여 팀 내의 github pages 배포 시 404 not found 이슈를 해결한 경험이 있습니다. ",
+          "webpack 환경의 CI & CD 파이프라인 구축 및 자바스트립트에서 타입스크립트로 마이그레이션을 적용한 경험이 있습니다. ",
       },
       {
         id: "etc-3",
