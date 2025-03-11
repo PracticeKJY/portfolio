@@ -24,7 +24,7 @@ interface NotionData {
   }[]
 }
 
-export default function page() {
+export default function Project() {
   const notionData =
     useAtomValue<NotionData>(notionDataAtom)
 
