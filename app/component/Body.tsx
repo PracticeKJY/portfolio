@@ -1,8 +1,5 @@
 "use client"
 
-import Animation from "./Animation"
-import Link from "next/link"
-import { AiOutlineArrowDown } from "react-icons/ai"
 import { SlArrowDown } from "react-icons/sl"
 import HomeBackground from "./HomeBackground"
 
@@ -44,7 +41,7 @@ const Body = ({ skillRef }: any) => {
               </div>
               <div>
                 <span className="underline-neon">
-                  개인보다 팀
+                  최적의 효율
                 </span>
                 을 우선시 합니다.
               </div>

@@ -1,53 +1,118 @@
 "use client"
 
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/dist/ScrollTrigger"
+import Lenis from "lenis"
 import { useAtomValue } from "jotai"
-import ProjectPage from "./ProjectPage"
 import { notionDataAtom } from "@/store/state"
-import Container from "../Container"
-import { useEffect, useState } from "react"
+import ProjectPage from "./ProjectPage"
 
-const Project = () => {
-  const notionData = useAtomValue(notionDataAtom)
+interface NotionData {
+  results: {
+    properties: {
+      이름: { title: { plain_text: string }[] }
+      Deploy: { rich_text: { text: { content: string } }[] }
+      Skills: { multi_select: string[] }
+      WorkPeriod: { date: string }
+      Description: {
+        rich_text: {
+          plain_text: string
+        }[]
+      }
+    }
+  }[]
+}
+
+export default function page() {
+  const notionData =
+    useAtomValue<NotionData>(notionDataAtom)
+
+  const imageRef = useRef<HTMLDivElement[]>([])
+  const imageContainerRef = useRef<HTMLDivElement | null>(
+    null
+  )
+
+  const imageSection = notionData?.results.map(
+    (data, index) => (
+      <li key={index}>
+        <div
+          className="relative w-[300px] h-[600px] sm:w-[356px] sm:h-[442px] perspective-6"
+          ref={(ref) => {
+            if (ref) imageRef.current[index] = ref
+          }}
+        >
+          <ProjectPage
+            index={index}
+            name={
+              data.properties.이름.title[0]?.plain_text ??
+              ""
+            }
+            deploy={
+              data.properties.Deploy.rich_text[0]?.text
+                .content ?? ""
+            }
+            tag={data.properties.Skills.multi_select ?? []}
+            WorkPeriod={
+              data.properties.WorkPeriod.date ?? ""
+            }
+            Description={
+              data.properties.Description.rich_text[0]
+                ?.plain_text ?? ""
+            }
+          />
+        </div>
+      </li>
+    )
+  )
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  useEffect(() => {
+    if (
+      !imageContainerRef.current ||
+      imageRef.current.length === 0
+    )
+      return
+
+    gsap.to(imageRef.current, {
+      xPercent: -100 * (imageRef.current.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: imageContainerRef.current,
+        scrub: 1,
+        end: "+=" + imageContainerRef.current.offsetWidth,
+        pin: true,
+        snap: 1 / (imageRef.current.length - 1),
+      },
+    })
+
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill())
+    }
+  }, [notionData])
+
+  // Lenis 설정
+  const lenis = new Lenis()
+  lenis.on("scroll", () => {})
+
+  function raf(time: number) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+  requestAnimationFrame(raf)
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10 animate-intersection opacity-0">
-        <div className="grid grid-cols-1 gap-6  m-4 sm:p-12 md:grid-cols-2 ">
-          {notionData.results.map(
-            (data: any, index: any) => {
-              return (
-                <li key={index}>
-                  <div className="relative w-[300px] h-[600px] sm:w-[356px] sm:h-[442px] perspective-6">
-                    <ProjectPage
-                      index={index}
-                      name={
-                        data.properties.이름.title[0]
-                          .plain_text
-                      }
-                      deploy={
-                        data.properties.Deploy.rich_text[0]
-                          .text.content
-                      }
-                      tag={
-                        data.properties.Skills.multi_select
-                      }
-                      WorkPeriod={
-                        data.properties.WorkPeriod.date
-                      }
-                      Description={
-                        data.properties.Description
-                          .rich_text[0].plain_text
-                      }
-                    />
-                  </div>
-                </li>
-              )
-            }
-          )}
-        </div>
-      </div>
+      <main className=" w-full overflow-x-hidden">
+        <section
+          className="min-h-screen flex flex-nowrap items-center space-x-10 px-20"
+          ref={imageContainerRef}
+          style={{ width: "calc(100vw * 6)" }}
+        >
+          {imageSection}
+        </section>
+      </main>
     </>
   )
 }
-
-export default Project

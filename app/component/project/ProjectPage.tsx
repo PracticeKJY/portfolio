@@ -1,7 +1,6 @@
 "use client"
 
 import { FC } from "react"
-import Image from "next/legacy/image"
 import Link from "next/link"
 import ProjectImage from "./ProjectImage"
 
@@ -19,7 +18,6 @@ const ProjectPage: FC<ProjectPageProps> = ({
   tag,
   Description,
   name,
-  index,
   deploy,
 }) => {
   const startDate = WorkPeriod.start
@@ -40,55 +38,16 @@ const ProjectPage: FC<ProjectPageProps> = ({
           <h3 className="max-w-[300px] mt-4 text-clamp">
             {Description}
           </h3>
-          <h4 className="max-w-[300px] mt-4 text-h4">{`${startDate} ~ ${endDate}`}</h4>
-          <Link
-            href={
-              name === "Taing"
-                ? "https://github.com/likelion-fe4-js3/taing"
-                : name === "Market Karly"
-                ? "https://github.com/LikeLion-FE-React-Project04/project-repo"
-                : name === "Restay"
-                ? "https://github.com/PracticeKJY/restay-refactor"
-                : name === "Portfolio"
-                ? "https://github.com/PracticeKJY/portfolio"
-                : name === "My Frontend Story"
-                ? "https://github.com/PracticeKJY/my-frontend-story"
-                : ""
-            }
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            깃허브 바로가기
-          </Link>
+          {startDate && endDate && (
+            <h4 className="max-w-[300px] mt-4 text-h4">{`${startDate} ~ ${endDate}`}</h4>
+          )}
           <Link
             href={deploy}
             rel="noopener noreferrer"
             target="_blank"
             className={`${deploy === "-" && "hidden"}`}
           >
-            배포 바로가기
-          </Link>
-          <Link
-            href={
-              name === "Restay"
-                ? "https://maddening-orchid-043.notion.site/Restay-8075199f7c644fe39439f5a905d37dcc?pvs=4"
-                : name === "Market Karly"
-                ? "https://maddening-orchid-043.notion.site/Market-Karly-b108e152ef5e4950bd4bb570cef4734b?pvs=4"
-                : name === "Taing"
-                ? "https://maddening-orchid-043.notion.site/Taing-0edacf7f7dc34c978d63b302563a1f43?pvs=4"
-                : name === "Portfolio"
-                ? "https://maddening-orchid-043.notion.site/portfolio-ee28d1d87eb84a13b6586f1cdad509f1?pvs=4"
-                : name === "My Frontend Story"
-                ? "https://maddening-orchid-043.notion.site/My-Frontend-Story-3f93750e22234e3bac6f406000b1f3e6?pvs=4"
-                : ""
-            }
-            rel="noopener noreferrer"
-            target="_blank"
-            className={`${name === "Taing" && "hidden"} ${
-              name === "My Frontend Story" && "hidden"
-            }`}
-          >
-            인사이트 바로가기
+            웹사이트로 이동
           </Link>
         </div>
         <div className="hidden sm:block relative w-[300px] p-4">

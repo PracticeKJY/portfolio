@@ -40,19 +40,19 @@ export const FrontEndLists = atom([
         name: "React",
         value: 70,
         description:
-          "React의 가상돔,라이프사이클,훅 등을 이해하고 코드를 작성합니다.",
+          "React의 life cycle, hook 등을 이해하고 코드를 작성합니다.",
       },
       {
         id: "fro-2",
         name: "Next.js",
         value: 70,
         description:
-          "Next.js의 page와 app 모드를 프로젝트에 적용 및 마이그레이션한 경험이 있습니다. 또한 언어셋(next-intl) 및 REST API를 적용한 경험이 있습니다.",
+          "Next.js의 page와 app router를 프로젝트에 적용 및 마이그레이션한 경험이 있습니다. 또한 언어셋(next-intl) 및 REST API를 적용한 경험이 있습니다.",
       },
       {
         id: "fro-3",
         name: "Vite",
-        value: 70,
+        value: 50,
         description:
           "Vite를 이용한 todoList 등 토이프로젝트를 적용한 경험이 있습니다.",
       },

@@ -5,22 +5,13 @@ import Footer from "../component/Footer"
 import Header from "../component/Header"
 import Skill from "../component/skill/Skill"
 import Project from "../component/project/Project"
-// import HomeBackground from "../component/HomeBackground"
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react"
+import { useEffect, useRef, useState } from "react"
 import { notionDataAtom } from "@/store/state"
-import { useAtom, useSetAtom } from "jotai"
+import { useSetAtom } from "jotai"
 import Contact from "../component/contact/Contact"
 import FakeMoveToScrollDiv from "../component/FakeMoveToScrollDiv"
 import Container from "../component/Container"
 import Career from "../component/career/Career"
-
-const fakeFetch = (delay = 1000) =>
-  new Promise((res) => setTimeout(res, delay))
 
 const AboutMe = ({ data }: any) => {
   const setNotionData = useSetAtom(notionDataAtom)
@@ -30,7 +21,7 @@ const AboutMe = ({ data }: any) => {
   })
 
   const skillIntersection = useRef<HTMLDivElement>(null)
-  const projectIntersection = useRef<HTMLDivElement>(null)
+  // const projectIntersection = useRef<HTMLDivElement>(null)
   const skillRef = useRef(null)
   const projectRef = useRef(null)
   const topRef = useRef(null)
@@ -54,19 +45,19 @@ const AboutMe = ({ data }: any) => {
       )
       observer.observe(skillIntersection.current as Element)
     }
-    if (projectIntersection) {
-      observer = new IntersectionObserver(
-        async ([e]) => {
-          if (e.isIntersecting) {
-            setProjectLoading(true)
-          }
-        },
-        { threshold: 1 }
-      )
-      observer.observe(
-        projectIntersection.current as Element
-      )
-    }
+    // if (projectIntersection) {
+    //   observer = new IntersectionObserver(
+    //     async ([e]) => {
+    //       if (e.isIntersecting) {
+    //         setProjectLoading(true)
+    //       }
+    //     },
+    //     { threshold: 1 }
+    //   )
+    //   observer.observe(
+    //     projectIntersection.current as Element
+    //   )
+    // }
     return () => observer.disconnect()
   }, [])
 
@@ -80,9 +71,7 @@ const AboutMe = ({ data }: any) => {
         contactRef={contactRef}
       />
       <FakeMoveToScrollDiv ref={topRef} />
-      {/* <HomeBackground /> */}
       <Body skillRef={skillRef} />
-
       <FakeMoveToScrollDiv ref={skillRef} />
       <Container>
         <div className="w-full flex items-start pb-[6px] border-b-[1px] border-slate-800 dark:border-white">
@@ -100,12 +89,13 @@ const AboutMe = ({ data }: any) => {
         <div className="w-full flex items-start pb-[6px] border-b-[1px] border-slate-800 dark:border-white">
           <div
             className="text-3xl font-semibold"
-            ref={projectIntersection}
+            // ref={projectIntersection}
           >
             Projects
           </div>
         </div>
-        {projectLoading && <Project />}
+        <Project />
+        {/* {projectLoading && <Project />} */}
       </Container>
       <FakeMoveToScrollDiv ref={careerRef} />
       <Career />

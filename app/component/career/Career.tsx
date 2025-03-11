@@ -18,24 +18,21 @@ const Career = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
+            <span className="text-lg">
+              멋쟁이사자처럼 프론트엔드 4기
+            </span>
+          </Link>
+          <p className="text-l ml-2">2022.12 ~ 2023.06</p>
+        </div>
+        <div className="pt-5 flex items-center">
+          <Link
+            href="https://codespace.im/ko"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <span className="text-lg">CODESPACE</span>
           </Link>
           <p className="text-l ml-2">2023.10 ~ 2024.08</p>
-        </div>
-        <div className="mt-[1rem]">
-          <p className="text-l">
-            - Node.js(express) + .pug를 이용한 풀스택 구현
-          </p>
-          <p className="text-l">
-            - react(CRA) 프론트엔드 코드 작성
-          </p>
-          <p className="text-l">
-            - react(Next.js) 프론트엔드 코드 작성
-          </p>
-          <p className="text-l">
-            - REST API 적용 및 다양한 open API 적용
-          </p>
-          <p className="text-l">- 자사 웹사이트 개발</p>
         </div>
       </div>
     </section>
