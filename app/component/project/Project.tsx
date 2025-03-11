@@ -93,14 +93,20 @@ export default function Project() {
   }, [notionData])
 
   // Lenis 설정
-  const lenis = new Lenis()
-  lenis.on("scroll", () => {})
 
-  function raf(time: number) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-  requestAnimationFrame(raf)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const lenis = new Lenis()
+      lenis.on("scroll", () => {})
+
+      const raf = (time: number) => {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
+    }
+  }, [])
 
   return (
     <>
