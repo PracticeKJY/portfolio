@@ -24,7 +24,7 @@ const ProjectPage: FC<ProjectPageProps> = ({
   const endDate = WorkPeriod.end
 
   return (
-    <div className="projectWrapper">
+    <div className="projectWrapper group">
       <div className="project-card-front">
         <ProjectImage name={name} />
         <div className="pt-4 pl-8  border-t-[1px] border-gray-300 dark:border-gray-200/50">

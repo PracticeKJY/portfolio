@@ -42,24 +42,36 @@
   dark:border-gray-200/50
   dark:hover:shadow-gray-400/20
   sm:delay-100
-  sm:transition-transform sm:duration-700 sm:transform-style-3d sm:hover:rotate-y-180;
+  sm:transition-transform sm:duration-700 sm:transform-style-3d 
+  /* sm:hover:rotate-y-180; */;
 }
 
 .project-card-front {
   @apply flex-col 
   text-3xl
   font-semibold
-  hidden w-full h-full sm:flex 
-  absolute   bg-white
-  dark:text-white
-  dark:bg-black 
+  absolute w-full h-full sm:flex
+  bg-white dark:text-white dark:bg-black
   backface-hidden
-   rotate-y-0;
+  transition-all ease-in-out
+  duration-500 opacity-100
+  sm:group-hover:opacity-0 
+  sm:group-hover:duration-300;
 }
 
 .project-card-back {
-  @apply absolute w-full h-full backface-hidden
-  sm:rotate-y-180;
+  @apply absolute 
+  w-full 
+  h-full 
+  opacity-0 
+  translate-y-2
+  transition-all duration-300 ease-in-out
+  backface-hidden 
+  sm:pointer-events-none
+  sm:group-hover:opacity-100 
+  sm:group-hover:translate-y-0 
+  sm:group-hover:pointer-events-auto
+  sm:group-hover:duration-500;
 }
 
 .underline-contact {
