@@ -7,6 +7,8 @@ import Lenis from "lenis"
 import { useAtomValue } from "jotai"
 import { notionDataAtom } from "@/store/state"
 import ProjectPage from "./ProjectPage"
+import Image from "next/image"
+import Link from "next/link"
 
 interface NotionData {
   results: {
@@ -14,7 +16,11 @@ interface NotionData {
       이름: { title: { plain_text: string }[] }
       Deploy: { rich_text: { text: { content: string } }[] }
       Skills: { multi_select: string[] }
-      WorkPeriod: { date: string }
+      WorkPeriod: {
+        date: { start: string; end: string; time_zone: any }
+        id: string
+        type: string
+      }
       Description: {
         rich_text: {
           plain_text: string
@@ -28,6 +34,84 @@ export default function Project() {
   const notionData =
     useAtomValue<NotionData>(notionDataAtom)
 
+  // mobile
+  const images = notionData?.results.map((data, index) => {
+    const name =
+      data.properties.이름.title[0]?.plain_text ?? ""
+    const deploy =
+      data.properties.Deploy.rich_text[0]?.text.content ??
+      ""
+    const Description =
+      data.properties.Description.rich_text[0]
+        ?.plain_text ?? ""
+    const WorkPeriod = data.properties.WorkPeriod.date ?? ""
+
+    return (
+      <li key={index}>
+        <div className="block relative w-full h-[350px]">
+          <Image
+            className=" w-full h-full"
+            src={
+              name === "Taing"
+                ? "/taing-thumb.png"
+                : name === "Market Karly"
+                ? "/karly-thumb.png"
+                : name === "Restay"
+                ? "/restay-thumb.png"
+                : name === "Portfolio"
+                ? "/portfolio-thumb.png"
+                : name === "My Frontend Story"
+                ? "/intersection-observer-thumb.png"
+                : name == "named"
+                ? "/named-thumb.png"
+                : name == "당신의 타로"
+                ? "/taro-thumb.png"
+                : name == "tether green"
+                ? "/tethergreen-thumb.png"
+                : name == "tethermax"
+                ? "/tethermax-thumb.png"
+                : name == "풀박사"
+                ? "/drfull-thumb.png"
+                : name == "tubit"
+                ? "/tubit-thumb.png"
+                : name == "gseed"
+                ? "/gseed-thumb.png"
+                : name == "Delivered korea"
+                ? "/delivered-thumb.png"
+                : name == "Codespace"
+                ? "/codespace-thumb.png"
+                : ""
+            }
+            alt="cover image"
+            sizes="100%"
+            fill
+          />
+          <div></div>
+        </div>
+        <div className="w-full h-full">
+          <div className="p-4 flex flex-col border-t-[1px] border-gray-300 dark:border-gray-200/50">
+            <h1 className="text-title font-bold">{name}</h1>
+            <h3 className="max-w-[300px] mt-4 text-clamp">
+              {Description}
+            </h3>
+            {WorkPeriod.start && WorkPeriod.end && (
+              <h4 className="max-w-[300px] mt-4 text-h4">{`${WorkPeriod.start} ~ ${WorkPeriod.end}`}</h4>
+            )}
+            <Link
+              href={deploy}
+              rel="noopener noreferrer"
+              target="_blank"
+              className={`${deploy === "-" && "hidden"}`}
+            >
+              웹사이트로 이동
+            </Link>
+          </div>
+        </div>
+      </li>
+    )
+  })
+
+  // pc
   const imageRef = useRef<HTMLDivElement[]>([])
   const imageContainerRef = useRef<HTMLDivElement | null>(
     null
@@ -37,7 +121,7 @@ export default function Project() {
     (data, index) => (
       <li key={index}>
         <div
-          className="relative w-[300px] h-[600px] sm:w-[356px] sm:h-[442px] perspective-6"
+          className="relative w-[300px] h-[600px] sm:w-[356px] sm:h-[442px]"
           ref={(ref) => {
             if (ref) imageRef.current[index] = ref
           }}
@@ -65,7 +149,6 @@ export default function Project() {
       </li>
     )
   )
-
   gsap.registerPlugin(ScrollTrigger)
 
   useEffect(() => {
@@ -93,7 +176,6 @@ export default function Project() {
   }, [notionData])
 
   // Lenis 설정
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       const lenis = new Lenis({
@@ -112,15 +194,20 @@ export default function Project() {
 
   return (
     <>
-      <main className=" w-full">
+      <main className="w-full hidden sm:block">
         <section
-          className="min-h-screen flex flex-nowrap items-center space-x-10 px-20"
+          className="hidden sm:flex min-h-screen flex-nowrap items-center space-x-10 px-20"
           ref={imageContainerRef}
           style={{
             overflow: "hidden",
           }}
         >
           {imageSection}
+        </section>
+      </main>
+      <main className="w-full block sm:hidden">
+        <section className="pt-10 space-y-10 ">
+          {images}
         </section>
       </main>
     </>
