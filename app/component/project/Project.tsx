@@ -181,7 +181,6 @@ export default function Project() {
         end:
           "+=" + imageContainerRef.current.offsetWidth * 3,
         pin: true,
-        markers: true,
       },
     })
 
