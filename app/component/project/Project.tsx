@@ -80,10 +80,10 @@ export default function Project() {
       ease: "none",
       scrollTrigger: {
         trigger: imageContainerRef.current,
-        scrub: 1,
-        end: "+=" + imageContainerRef.current.offsetWidth,
+        scrub: true,
+        end:
+          "+=" + imageContainerRef.current.offsetWidth * 3,
         pin: true,
-        snap: 1 / (imageRef.current.length - 1),
       },
     })
 
@@ -96,7 +96,9 @@ export default function Project() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const lenis = new Lenis()
+      const lenis = new Lenis({
+        lerp: 0.05, // 이동 속도 조정
+      })
       lenis.on("scroll", () => {})
 
       const raf = (time: number) => {
@@ -110,11 +112,13 @@ export default function Project() {
 
   return (
     <>
-      <main className=" w-full overflow-x-hidden">
+      <main className=" w-full">
         <section
           className="min-h-screen flex flex-nowrap items-center space-x-10 px-20"
           ref={imageContainerRef}
-          style={{ width: "calc(100vw * 6)" }}
+          style={{
+            overflow: "hidden",
+          }}
         >
           {imageSection}
         </section>
