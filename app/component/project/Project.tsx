@@ -158,8 +158,22 @@ export default function Project() {
     )
       return
 
+    const screenWidth = window.innerWidth
+
+    // 화면 너비에 따라 200px을 다르게 조정
+    const offset =
+      screenWidth < 639
+        ? 20
+        : screenWidth < 768
+        ? 15
+        : screenWidth < 1024
+        ? 200
+        : screenWidth < 1398
+        ? 100
+        : 200 // screenWidth >= 1398일 경우 200
+
     gsap.to(imageRef.current, {
-      xPercent: -100 * (imageRef.current.length - 1),
+      xPercent: -100 * imageRef.current.length + offset,
       ease: "none",
       scrollTrigger: {
         trigger: imageContainerRef.current,
@@ -167,6 +181,7 @@ export default function Project() {
         end:
           "+=" + imageContainerRef.current.offsetWidth * 3,
         pin: true,
+        markers: true,
       },
     })
 
