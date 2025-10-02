@@ -21,8 +21,8 @@ const ProjectImage: FC<ProjectImageProps> = ({
       <Image
         className="border-none "
         src={
-          name === "Taing"
-            ? "/taing-thumb.png"
+          name === "TMS"
+            ? "/hynix1.png"
             : name === "Market Karly"
             ? "/karly-thumb.png"
             : name === "Restay"

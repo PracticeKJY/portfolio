@@ -52,9 +52,9 @@ export const FrontEndLists = atom([
       {
         id: "fro-3",
         name: "Vite",
-        value: 50,
+        value: 70,
         description:
-          "Vite를 이용한 todoList 등 토이프로젝트를 적용한 경험이 있습니다.",
+          "Vite와 react-router-dom을 사용하여 프로젝트를 진행한 경험이 있습니다.",
       },
       {
         id: "fro-4",
@@ -72,20 +72,27 @@ export const FrontEndLists = atom([
       },
       {
         id: "fro-6",
+        name: "Zustand",
+        value: 60,
+        description:
+          "프로젝트에 Zustand를 적용한 경험이 있습니다.",
+      },
+      {
+        id: "fro-7",
         name: "css Modules",
         value: 80,
         description:
           "css Modules를 사용하여 컴포넌트들의 CSS를 효율적으로 관리할 수 있습니다.",
       },
       {
-        id: "fro-7",
+        id: "fro-8",
         name: "Tailwind",
         value: 50,
         description:
           "Tailwind를 사용하여 효율적으로 반응형 UI를 제작한 경험이 있습니다.",
       },
       {
-        id: "fro-8",
+        id: "fro-9",
         name: "Styled-components",
         value: 80,
         description:
@@ -118,34 +125,6 @@ export const BackEndLists = atom([
         value: 60,
         description:
           "noSQL의 특징에 대해 이해하고 모델링 및 프로젝트에 적용한 경험을 가지고 있습니다.",
-      },
-    ],
-  },
-])
-export const EtcLists = atom([
-  {
-    title: "Etc",
-    items: [
-      {
-        id: "etc-1",
-        name: "Eslint & Prettier",
-        value: 60,
-        description:
-          "팀 단위로 코드컨벤션을 논의하고 적용한 경험이 있습니다 ",
-      },
-      {
-        id: "etc-2",
-        name: "Webpack",
-        value: 50,
-        description:
-          "webpack 환경의 CI & CD 파이프라인 구축 및 자바스트립트에서 타입스크립트로 마이그레이션을 적용한 경험이 있습니다. ",
-      },
-      {
-        id: "etc-3",
-        name: "Postman",
-        value: 50,
-        description:
-          "Postman을 통한 api 테스트 및 적용을 한 경험이 있습니다 ",
       },
     ],
   },

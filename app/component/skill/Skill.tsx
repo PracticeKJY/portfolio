@@ -3,7 +3,6 @@
 import { useAtomValue } from "jotai"
 import {
   BackEndLists,
-  EtcLists,
   FrontEndLists,
   LanguageLists,
 } from "@/store/state"
@@ -16,7 +15,6 @@ const Skill = forwardRef<refProps>((_, ref) => {
   const language = useAtomValue(LanguageLists)
   const frontEnd = useAtomValue(FrontEndLists)
   const backEnd = useAtomValue(BackEndLists)
-  const etc = useAtomValue(EtcLists)
 
   return (
     <>
@@ -24,7 +22,6 @@ const Skill = forwardRef<refProps>((_, ref) => {
         <SkillCard list={language} />
         <SkillCard list={frontEnd} />
         <SkillCard list={backEnd} />
-        <SkillCard list={etc} />
       </div>
     </>
   )

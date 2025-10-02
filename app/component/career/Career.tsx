@@ -32,8 +32,20 @@ const Career = () => {
           >
             <span className="text-lg">CODESPACE</span>
           </Link>
-          <p className="text-l ml-2">2023.10 ~ 2024.08</p>
+          <p className="text-l ml-2">2023.10 ~ 2024.09</p>
         </div>
+        <Link
+          href=""
+          className="pt-5 flex items-center"
+          onClick={(e) => e.preventDefault()}
+        >
+          <div>
+            <span className="text-lg">
+              제이테크놀로지㈜
+            </span>
+          </div>
+          <p className="text-l ml-2">2025.06 ~ 2025.09</p>
+        </Link>
       </div>
     </section>
   )
