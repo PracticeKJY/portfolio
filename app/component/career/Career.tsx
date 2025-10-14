@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { FC, ReactNode } from "react"
 
 const Career = () => {
@@ -12,40 +11,36 @@ const Career = () => {
             Career
           </div>
         </div>
-        <div className="pt-10 flex items-center">
-          <Link
-            href="https://codespace.im/ko"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span className="text-lg">
+        <div className="flex flex-col items-start pt-10 md:flex-row md:items-center">
+          <p>
+            <span className="text-lg text-slate-400">
               멋쟁이사자처럼 프론트엔드 4기
             </span>
-          </Link>
-          <p className="text-l ml-2">2022.12 ~ 2023.06</p>
+          </p>
+          <p className="text-l md:ml-2">
+            2022.12 ~ 2023.06
+          </p>
         </div>
-        <div className="pt-5 flex items-center">
-          <Link
-            href="https://codespace.im/ko"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span className="text-lg">CODESPACE</span>
-          </Link>
-          <p className="text-l ml-2">2023.10 ~ 2024.09</p>
+        <div className="flex flex-col items-start pt-5 md:flex-row md:items-center">
+          <p>
+            <span className="text-lg text-slate-400">
+              CODESPACE
+            </span>
+          </p>
+          <p className="text-l md:ml-2">
+            2023.10 ~ 2024.09
+          </p>
         </div>
-        <Link
-          href=""
-          className="pt-5 flex items-center"
-          onClick={(e) => e.preventDefault()}
-        >
+        <p className="flex flex-col items-start pt-5 md:flex-row md:items-center">
           <div>
-            <span className="text-lg">
+            <span className="text-lg text-slate-400">
               제이테크놀로지㈜
             </span>
           </div>
-          <p className="text-l ml-2">2025.06 ~ 2025.09</p>
-        </Link>
+          <p className="text-l md:ml-2">
+            2025.06 ~ 2025.09
+          </p>
+        </p>
       </div>
     </section>
   )
