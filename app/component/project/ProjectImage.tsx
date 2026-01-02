@@ -23,6 +23,8 @@ const ProjectImage: FC<ProjectImageProps> = ({
         src={
           name === "TMS"
             ? "/hynix1.png"
+            : name === "HMM - LIVECHAT"
+            ? "/hmm-thumb.png"
             : name === "Market Karly"
             ? "/karly-thumb.png"
             : name === "Restay"
