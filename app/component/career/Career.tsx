@@ -41,6 +41,16 @@ const Career = () => {
             2025.06 ~ 2025.09
           </p>
         </p>
+        <p className="flex flex-col items-start pt-5 md:flex-row md:items-center">
+          <div>
+            <span className="text-lg text-slate-400">
+              ㈜볼드
+            </span>
+          </div>
+          <p className="text-l md:ml-2">
+            2025.10 ~ 2025.12
+          </p>
+        </p>
       </div>
     </section>
   )
