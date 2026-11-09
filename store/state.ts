@@ -98,6 +98,13 @@ export const FrontEndLists = atom([
         description:
           "Styled-components를 사용하여 효율적으로 반응형 UI를 제작한 경험이 있습니다.",
       },
+      {
+        id: "fro-10",
+        name: "UI Libraries",
+        value: 80,
+        description:
+          "MUI, Ant Design 등 다양한 UI 라이브러리를 활용하여 재사용 가능한 공통 컴포넌트를 개발하고, 디자인 시스템을 구축한 경험이 있습니다.",
+      },
     ],
   },
 ])
@@ -121,10 +128,32 @@ export const BackEndLists = atom([
       },
       {
         id: "bac-3",
+        name: "java",
+        value: 30,
+        description:
+          "Java의 기본 문법과 객체지향 프로그래밍(OOP)의 핵심 개념을 학습하고 있으며, Spring Boot 기반의 백엔드 개발 역량을 확장하고 있습니다.",
+      },
+
+      {
+        id: "bac-4",
         name: "Firebase",
         value: 60,
         description:
           "noSQL의 특징에 대해 이해하고 모델링 및 프로젝트에 적용한 경험을 가지고 있습니다.",
+      },
+    ],
+  },
+])
+export const AIToolsLists = atom([
+  {
+    title: "AI",
+    items: [
+      {
+        id: "ai-1",
+        name: "Codex",
+        value: 40,
+        description:
+          "AI 코딩 에이전트를 활용한 코드 분석, 리팩토링 및 테스트 자동화 방법을 학습하고 있으며, 개발 생산성과 코드 품질을 향상시키기 위한 AI 기반 개발 워크플로를 연구하고 있습니다.",
       },
     ],
   },

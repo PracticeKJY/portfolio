@@ -5,6 +5,7 @@ import {
   BackEndLists,
   FrontEndLists,
   LanguageLists,
+  AIToolsLists,
 } from "@/store/state"
 import SkillCard from "./SkillCard"
 import { forwardRef } from "react"
@@ -15,6 +16,7 @@ const Skill = forwardRef<refProps>((_, ref) => {
   const language = useAtomValue(LanguageLists)
   const frontEnd = useAtomValue(FrontEndLists)
   const backEnd = useAtomValue(BackEndLists)
+  const ai = useAtomValue(AIToolsLists)
 
   return (
     <>
@@ -22,6 +24,7 @@ const Skill = forwardRef<refProps>((_, ref) => {
         <SkillCard list={language} />
         <SkillCard list={frontEnd} />
         <SkillCard list={backEnd} />
+        <SkillCard list={ai} />
       </div>
     </>
   )
